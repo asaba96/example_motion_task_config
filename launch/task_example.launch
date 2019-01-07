@@ -1,0 +1,10 @@
+<launch>
+    <rosparam command="load" 
+        file="$(find example_motion_task_config)/param/safety_config.yaml" />
+
+    <arg name="bond_id_namespace" default="safety_bonds" />
+    
+    <include file="$(find robot_motions_server_ros)/launch/motion_server.launch">
+        <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
+    </include>
+</launch>
