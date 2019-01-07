@@ -9,7 +9,7 @@ from std_msgs.msg import String
 
 from motions_server.abstract_command_handler import (TaskHandledState,
                                                      AbstractCommandHandler)
-from motions_server.abstract_safety_handler import AbstractSafetyResponder
+from motions_server.abstract_safety_responder import AbstractSafetyResponder
 
 
 class CommandHandler(AbstractCommandHandler):
@@ -52,5 +52,5 @@ class SafetyResponder(AbstractSafetyResponder):
     def activate_safety_response(self):
         return
 
-    def wait_until_ready(self):
+    def wait_until_ready(self, timeout):
         return
