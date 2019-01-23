@@ -17,11 +17,18 @@ def run(server_name):
 
     rospy.logwarn('Success: {}'.format(client.get_result().success))
 
+    rospy.loginfo('Testing Cancel')
+
     # test cancel
     request = TaskRequestGoal(action_type='test_task')
     client.send_goal(request)
+
+    rospy.sleep(.25)
+
     client.cancel_goal()
     rospy.logwarn('Goal Canceled')
+
+    rospy.loginfo('Test Preempt')
 
     # test preempt
     request = TaskRequestGoal(action_type='test_task')
