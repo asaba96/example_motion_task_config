@@ -7,7 +7,7 @@ from motions_server.abstract_task import AbstractTask
 
 
 class TestTask(AbstractTask):
-    def __init__(self):
+    def __init__(self, request):
         self._iterations = 0
 
     def get_desired_command(self):

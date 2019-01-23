@@ -7,4 +7,10 @@
     <include file="$(find robot_motions_server_ros)/launch/motion_server.launch">
         <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
     </include>
+    
+    <node name="test_action_client" pkg="example_motion_task_config" 
+            type="test_action_client.py">
+    </node>
+
+
 </launch>

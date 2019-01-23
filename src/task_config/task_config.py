@@ -17,8 +17,8 @@ class CommandHandler(AbstractCommandHandler):
         self._task_running_pub = rospy.Publisher('task_running', String, queue_size=10)
 
     def check_request(self, request):
-        if request == 'test_task':
-            return TestTask()
+        if request.action_type == 'test_task':
+            return TestTask(request)
         else:
             return None
 
